@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "295554685810",
+    "project_id": "acendeu-a-reserva",
+    "storage_bucket": "acendeu-a-reserva.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:295554685810:android:e75106ce47d01671ad1beb",
+        "android_client_info": {
+          "package_name": "com.example.acendeuareserva"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBwcSLxX-9fP_cjsf-WcJl-MiIxpvHoBg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="#1E1E1E">
+
+    <ImageView
+        android:id="@+id/imgPosto"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/posto_placeholder"
+        android:layout_marginBottom="16dp"
+        android:clipToOutline="true" />
+
+    <TextView
+        android:id="@+id/txtNomePosto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nome do Posto"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtDistanciaTempo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="⏳ Calculando rota..."
+        android:textColor="#FFBB33"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="4dp"/>
+
+
+    <TextView
+        android:id="@+id/txtMediaAvaliacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Média geral: -- ⭐"
+        android:textColor="#0099BB"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/txtMinhaAvaliacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Você ainda não avaliou"
+        android:textColor="#AAAAAA"
+        android:textSize="14sp"
+        android:layout_marginBottom="12dp" />
+
+    <RatingBar
+        android:id="@+id/ratingBarPosto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="1.0"
+        android:progressTint="#0099BB"
+        android:layout_marginBottom="20dp" />
+
+    <Button
+        android:id="@+id/btnIrAtePosto"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="TRAÇAR ROTA"
+        android:backgroundTint="#0099BB" />
+
+</LinearLayout>
