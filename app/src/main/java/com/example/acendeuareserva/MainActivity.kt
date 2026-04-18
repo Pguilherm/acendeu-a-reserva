@@ -120,7 +120,6 @@ class MainActivity : AppCompatActivity() {
                                 Toast.makeText(this@MainActivity, "Você chegou ao destino!", Toast.LENGTH_LONG).show()
                                 MapIcons.btnCancelarRota.performClick()
                             } else {
-                                // Lógica original de verificação de desvio
                                 val desvio = MapRotas.distanciaAteRota(userPoint)
                                 if (desvio > 50) mapViewModel.tracarRota(userPoint, destino)
                             }
