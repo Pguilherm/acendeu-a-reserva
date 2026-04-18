@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity() {
         LocationServices.getFusedLocationProviderClient(this)
     }
 
-
     private val apiService: ApiService by lazy {
         val client = OkHttpClient.Builder()
             .connectTimeout(120, TimeUnit.SECONDS)
@@ -43,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
         Retrofit.Builder()
             .baseUrl("https://overpass-api.de/")
-            .client(client) // Aplica o cliente configurado aqui
+            .client(client)
             .addConverterFactory(ScalarsConverterFactory.create())
             .build()
             .create(ApiService::class.java)
@@ -115,8 +114,16 @@ class MainActivity : AppCompatActivity() {
                     if (modoNavegacaoAtivo) {
                         MapIcons.map.controller.setCenter(userPoint)
                         destinoAtual?.let { destino ->
-                            val desvio = MapRotas.distanciaAteRota(userPoint)
-                            if (desvio > 50) mapViewModel.tracarRota(userPoint, destino)
+
+                            // Lógica de monitoramento de chegada ao destino
+                            if (userPoint.distanceToAsDouble(destino) < 30.0) {
+                                Toast.makeText(this@MainActivity, "Você chegou ao destino!", Toast.LENGTH_LONG).show()
+                                MapIcons.btnCancelarRota.performClick()
+                            } else {
+                                // Lógica original de verificação de desvio
+                                val desvio = MapRotas.distanciaAteRota(userPoint)
+                                if (desvio > 50) mapViewModel.tracarRota(userPoint, destino)
+                            }
                         }
                     }
                     MapIcons.map.invalidate()
